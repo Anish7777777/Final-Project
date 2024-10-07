@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2; /* Light gray background */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 20px; /* Add some padding to avoid edge contact */
+        }
+
+        .search-box {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px; /* Increased padding for a more spacious feel */
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 450px; /* Increased width */
+            max-width: 90%; /* Responsive to smaller screens */
+        }
+
+        h1 {
+            font-size: 24px; /* Slightly reduced font size for better fit */
+            color: #333; /* Dark gray heading */
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 90%; /* Adjusted width for better alignment */
+            padding: 14px; /* Increased padding for better usability */
+            border-radius: 20px;
+            border: 1px solid #ccc; /* Light gray border */
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #666; /* Muted gray button */
+            color: white;
+            padding: 14px 25px; /* Increased padding for the button */
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #888; /* Slightly darker on hover */
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #777; /* Light gray footer text */
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <h1>Artistic Legacy: Search Across Cultures and Eras</h1>
+        <form action="/search" method="POST">
+            <input type="text" name="query" placeholder="Type your search here..." required>
+            <br>
+            <button type="submit">Go</button>
+        </form>
+    </div>
+</body>
+</html>

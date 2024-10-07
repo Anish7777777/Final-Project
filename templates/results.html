@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2; /* Light gray background */
+            color: #333;  /* Dark gray text */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333; /* Dark gray heading */
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        ul li {
+            background-color: #fff; /* White background for list items */
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-size: 16px;
+            color: #333; /* Dark gray for text */
+        }
+
+        ul li:hover {
+            background-color: #e0e0e0; /* Light gray on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        ul li span {
+            color: #666; /* Medium gray for similarity score */
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #666; /* Medium gray for the button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .back-btn:hover {
+            background-color: #888; /* Slightly lighter gray on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <ul>
+        {% for doc, similarity in results %}
+        <li>{{ doc }}: <span>{{ similarity|round(4) }}</span></li>
+        {% endfor %}
+    </ul>
+    <a href="/" class="back-btn">Back to search</a>
+</body>
+</html>
